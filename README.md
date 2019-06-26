@@ -21,4 +21,7 @@
 	* 2. [x] Add a CountDown object
 	* 3. [x] Add a countdown interval variable (the rate at which the countdown will decrement)
 	* 4. [x] Add a variable that holds the integer representation of the countdown
-	* 5. [ ] Implement the logic for the *resetGame()* method
+	* 5. [x] Implement the logic for the *resetGame()* method
+	* 6. [x] Implement the *startGame()* method
+	* 7. [x] Update the *incrementScore()* method to start the game when the button is tapped
+	* 8. [ ] Implement the *endGame()* method because the game doesn't know what to do once the timer reaches 0

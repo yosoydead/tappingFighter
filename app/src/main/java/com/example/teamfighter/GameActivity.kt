@@ -44,9 +44,16 @@ class GameActivity : AppCompatActivity() {
         //button event listener
         tapMeButton.setOnClickListener { incrementScore() }
 
+        resetGame()
+
     }
 
     private fun incrementScore(){
+        //if the game is not started when tapping the button, start it
+        if(gameStarted == false){
+            startGame()
+        }
+
         //increment the score each time the button is tapped
         score++
 
@@ -56,11 +63,49 @@ class GameActivity : AppCompatActivity() {
     }
 
     private fun resetGame(){
+        /*when reseting the game i want to:
+            - set the gameStarted flag to false because the game has not started
+            - reset the score
+            - reset the textView where the score is displayed
+            - reset the timer textView
+        */
 
+        //reset the score
+        score = 0
+
+        //reset the value of the score textview
+        val initialScore = getString(R.string.your_score, score.toString())
+        gameScoreTextView.text = initialScore
+
+        //reset the value of the timer textView. it should display 60 seconds
+        val initialTimeLeft = getString(R.string.time_left, Integer.toString(60))
+        timeLeftTextView.text = initialTimeLeft
+
+        countDownTimer = object : CountDownTimer(initialCountDown, countDownInterval){
+            override fun onFinish() {
+                //TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+
+            override fun onTick(millisUntilFinished: Long) {
+                //every second, update the value of the time left textView
+                timeLeft = millisUntilFinished.toInt() / 1000
+
+                val timeLeftString = getString(R.string.time_left, timeLeft.toString())
+                timeLeftTextView.text = timeLeftString
+            }
+        }
+
+        //set the game flag to false
+        gameStarted = false
     }
 
     private fun startGame(){
+        //set the game flag to true because the game has started
+        gameStarted = true
 
+        //start the countdown because it doesnt start on itself
+        //it needs to be told when to start
+        countDownTimer.start()
     }
 
     private fun endGame(){
