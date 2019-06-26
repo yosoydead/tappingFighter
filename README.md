@@ -25,3 +25,7 @@
 	* 6. [x] Implement the *startGame()* method
 	* 7. [x] Update the *incrementScore()* method to start the game when the button is tapped
 	* 8. [x] Implement the *endGame()* method because the game doesn't know what to do once the timer reaches 0
+* [ ] Fifth step (make the app save its state when changing the orientation):
+	* 1. [ ] Create a companion object (static class) that holds two labels: one for the score and one for the time left
+	* 2. [ ] Override the *onSaveInstanceState()* method so when it is called, it stores the current score and the current time left and cancels the timer
+	* 3. [ ] Create a method that restores the state of the app after rotating of changing the state	
