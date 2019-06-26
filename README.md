@@ -29,10 +29,11 @@
 	* 1. [i] Create a companion object (static class) that holds two labels: one for the score and one for the time left
 	* 2. [x] Override the *onSaveInstanceState()* method so when it is called, it stores the current score and the current time left and cancels the timer
 	* 3. [x] Create a method that restores the state of the app after rotating of changing the state
-* [ ] Sixth step (making the app prettier):
+* [x] Sixth step (making the app prettier):
 	* 1. [x] Change the app bar color
 	* 2. [x] Change the background color of the main activity
 	* 3. [x] Add an animation(anim) resources folder
 	* 4. [x] Add a bouncing animation to the button
-	* 5. [ ] Create a menu resources folder
-	* 6. [ ] Add an about menu item
+	* 5. [x] Create a menu resources folder
+	* 6. [x] Add an about menu item
+	* 7. [x] In the menu, add a button that shows a dialog when tapped

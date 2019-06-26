@@ -4,6 +4,9 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.PersistableBundle
+import android.support.v7.app.AlertDialog
+import android.view.Menu
+import android.view.MenuItem
 import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.TextView
@@ -63,6 +66,28 @@ class GameActivity : AppCompatActivity() {
             //if the bundle is empty, just reset the game
             resetGame()
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        super.onCreateOptionsMenu(menu)
+
+        //inflate the menu item
+        menuInflater.inflate(R.menu.menu, menu)
+
+        //returnt true to let the activity know that the menu has been setup
+        return true
+    }
+
+
+    //this method is called whenever an item in the menu is selected
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        //if the item selected from the menu is the one defined by me, do something
+        if(item?.itemId == R.id.action_settings){
+            showInfo()
+        }
+
+        //return true to let the activity know that the event has been handled
+        return true
     }
 
     //override the saveInstanceState method so it stores the state of the app when the app changes
@@ -184,6 +209,17 @@ class GameActivity : AppCompatActivity() {
 
         //the game remains started even after a configuration change
         gameStarted = true
+    }
+
+    private fun showInfo(){
+        val dialogTitle = getString(R.string.about_title, BuildConfig.VERSION_NAME)
+        val dialogMessage = getString(R.string.about_message)
+
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle(dialogTitle)
+        builder.setMessage(dialogMessage)
+        builder.create().show()
+
     }
 
     //define the companion object that stores two labels
