@@ -28,4 +28,4 @@
 * [ ] Fifth step (make the app save its state when changing the orientation):
 	* 1. [i] Create a companion object (static class) that holds two labels: one for the score and one for the time left
 	* 2. [x] Override the *onSaveInstanceState()* method so when it is called, it stores the current score and the current time left and cancels the timer
-	* 3. [ ] Create a method that restores the state of the app after rotating of changing the state	
+	* 3. [x] Create a method that restores the state of the app after rotating of changing the state	

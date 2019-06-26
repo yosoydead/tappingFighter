@@ -46,8 +46,16 @@ class GameActivity : AppCompatActivity() {
         //button event listener
         tapMeButton.setOnClickListener { incrementScore() }
 
-        resetGame()
-
+        //use the saveInstanceState bundle to restore the app state if needed
+        if(savedInstanceState != null){
+            //grab the values of the current variables from the bundle
+            score = savedInstanceState.getInt(SCORE_KEY)
+            timeLeft = savedInstanceState.getInt(TIME_LEFT_KEY)
+            restoreGame()
+        }else{
+            //if the bundle is empty, just reset the game
+            resetGame()
+        }
     }
 
     //override the saveInstanceState method so it stores the state of the app when the app changes
@@ -134,6 +142,41 @@ class GameActivity : AppCompatActivity() {
 
         //reset the state of the game once the countdown has finished
         resetGame()
+    }
+
+    //this method restores the state of the app
+    private fun restoreGame(){
+
+        //here i grab the restored/modified value of the score
+        val restoredScore = getString(R.string.your_score, score.toString())
+        gameScoreTextView.text = restoredScore
+
+        //here i grab the value of the restored/modified value of the time left var
+        val restoredTime = getString(R.string.time_left, Integer.toString(timeLeft))
+        timeLeftTextView.text = restoredTime
+
+        //here, i create another timer that starts from the restored time left value
+        countDownTimer = object : CountDownTimer(timeLeft * 1000.toLong(), countDownInterval){
+            override fun onFinish() {
+                //in this method, specify what action should take place one the countdown finishes
+                endGame()
+            }
+
+            override fun onTick(millisUntilFinished: Long) {
+                //every second, update the value of the time left textView
+                timeLeft = millisUntilFinished.toInt() / 1000
+
+                val timeLeftString = getString(R.string.time_left, timeLeft.toString())
+                timeLeftTextView.text = timeLeftString
+            }
+        }
+
+        //i start the timer because the state has been restored and the timer needs to
+        //go on
+        countDownTimer.start()
+
+        //the game remains started even after a configuration change
+        gameStarted = true
     }
 
     //define the companion object that stores two labels
