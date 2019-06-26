@@ -3,6 +3,7 @@ package com.example.teamfighter
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.os.PersistableBundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -47,6 +48,22 @@ class GameActivity : AppCompatActivity() {
 
         resetGame()
 
+    }
+
+    //override the saveInstanceState method so it stores the state of the app when the app changes
+    //orientation
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
+
+        //store the current score
+        outState?.putInt(SCORE_KEY, score)
+
+        //store the current time left
+        outState?.putInt(TIME_LEFT_KEY, timeLeft)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
     }
 
     private fun incrementScore(){
@@ -117,5 +134,11 @@ class GameActivity : AppCompatActivity() {
 
         //reset the state of the game once the countdown has finished
         resetGame()
+    }
+
+    //define the companion object that stores two labels
+    companion object {
+        private val SCORE_KEY = "SCORE_KEY"
+        private val TIME_LEFT_KEY = "TIME_LEFT_KEY"
     }
 }
