@@ -16,3 +16,9 @@
 * [x] Third step:
 	* 1. [x] Add string resources for every view so you dont use hardcoded values
 	* 2. [x] Replace the contents of the *incrementScore()* method because of the string resources now
+* [ ] Fourth step:
+	* 1. [ ] Add a flag which tells if the game has been started or not
+	* 2. [ ] Add a CountDown object
+	* 3. [ ] Add a countdown interval variable (the rate at which the countdown will decrement)
+	* 4. [ ] Add a variable that holds the integer representation of the countdown
+	* 5. [ ] Implement the logic for the *resetGame()* method
