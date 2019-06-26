@@ -2,6 +2,7 @@ package com.example.teamfighter
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.widget.Button
 import android.widget.TextView
 
@@ -14,6 +15,20 @@ class GameActivity : AppCompatActivity() {
 
     //score variable
     internal var score = 0
+
+    //game started flag
+    internal var gameStarted = false
+
+    //countdown object
+    internal lateinit var countDownTimer: CountDownTimer
+    //the initial countdown: 60 seconds
+    internal var initialCountDown: Long = 60000
+    //countdown interval: 1 second
+    internal var countDownInterval: Long = 1000
+
+    //integer representation of the timer
+    internal var timeLeft = 60
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
