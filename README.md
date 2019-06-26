@@ -7,4 +7,9 @@
 	* 1. [x] Add an ID to the Button
 	* 2. [x] Change the text inside the Button
 	* 3. [x] Add an ID for each TextView
-	* 4. [x] Change the text inside each TextView. Inside both TextViews there will be a placeholder for some text that will be added later.
+	* 4. [x] Change the text inside each TextView. Inside both TextViews there will be a placeholder for some text that will be added later
+	* 5. [x] In the main activity add the following empty functions: *incrementScore(), resetGame(), startGame(), endGame()*
+	* 6. [x] Create variables for each of the components from the layout
+	* 7. [x] Attach an onClick event listener to the button
+	* 8. [x] Create a variable that keep track of the score
+	* 9. [x] Implement the logic for the *incrementScore()* method
