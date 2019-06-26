@@ -36,7 +36,7 @@ class GameActivity : AppCompatActivity() {
         score++
 
         //update the text of the textView
-        val newScore = "Your Score: $score"
+        val newScore = getString(R.string.your_score, score.toString())
         gameScoreTextView.text = newScore
     }
 
