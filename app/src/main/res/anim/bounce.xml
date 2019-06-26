@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--in this file, a bouncing animation for the button will be added
+it is going to trigger when the button is tapped-->
+
+<!--this set container holds all the transformations which will occur over the course of the animation-->
+<!--fillAfter: the animation will not reset the View that is animated back to its original position
+    before the animation took place. it will remain wherever it is when the animation ends-->
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillAfter="true"
+    android:shareInterpolator="@android:anim/bounce_interpolator">
+
+    <!-- - the animation occur for 2 seconds
+         - fromXscale and fromYscale specify that at the beginning of the animation, the width and height
+                of the View should be twice the original size
+         - pivotX and pivotY specify the center point from which the animation should occur
+                y means going vertically
+                x means going horizontally
+         - toXscale and toYscale specify to which scale the view should shrink
+
+         TLDR: when tapped, the button grows to twice its size, on the center of the screen
+                and returns to its original size over the course of 2 seconds
+               tapping the button while it is animated resets the animation
+        -->
+    <scale
+        android:duration="2000"
+        android:fromXScale="2.0"
+        android:fromYScale="2.0"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:toXScale="1.0"
+        android:toYScale="1.0"
+    />
+</set>

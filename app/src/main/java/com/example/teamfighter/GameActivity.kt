@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.PersistableBundle
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -44,7 +45,13 @@ class GameActivity : AppCompatActivity() {
         tapMeButton = findViewById(R.id.tap_me_button)
 
         //button event listener
-        tapMeButton.setOnClickListener { incrementScore() }
+        tapMeButton.setOnClickListener {
+            //add the bouncing animation to the button
+            val bouncingAnimation = AnimationUtils.loadAnimation(this, R.anim.bounce)
+            it.startAnimation(bouncingAnimation)
+
+            incrementScore()
+        }
 
         //use the saveInstanceState bundle to restore the app state if needed
         if(savedInstanceState != null){
