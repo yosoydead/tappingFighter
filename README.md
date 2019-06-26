@@ -30,8 +30,8 @@
 	* 2. [x] Override the *onSaveInstanceState()* method so when it is called, it stores the current score and the current time left and cancels the timer
 	* 3. [x] Create a method that restores the state of the app after rotating of changing the state
 * [ ] Sixth step (making the app prettier):
-	* 1. [ ] Change the app bar color
-	* 2. [ ] Change the background of the main activity
+	* 1. [x] Change the app bar color
+	* 2. [x] Change the background color of the main activity
 	* 3. [ ] Add an animation(anim) resources folder
 	* 4. [ ] Add a bouncing animation to the button
 	* 5. [ ] Create a menu resources folder
