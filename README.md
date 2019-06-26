@@ -13,3 +13,6 @@
 	* 7. [x] Attach an onClick event listener to the button
 	* 8. [x] Create a variable that keep track of the score
 	* 9. [x] Implement the logic for the *incrementScore()* method
+* [ ] Third step:
+	* 1. [ ] Add string resources for every view so you dont use hardcoded values
+	* 2. [ ] Replace the contents of the *incrementScore()* method because of the string resources now
