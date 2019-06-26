@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 
 class GameActivity : AppCompatActivity() {
 
@@ -68,6 +69,7 @@ class GameActivity : AppCompatActivity() {
             - reset the score
             - reset the textView where the score is displayed
             - reset the timer textView
+            - recreating the countdown object so it knows what to do
         */
 
         //reset the score
@@ -83,7 +85,8 @@ class GameActivity : AppCompatActivity() {
 
         countDownTimer = object : CountDownTimer(initialCountDown, countDownInterval){
             override fun onFinish() {
-                //TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                //in this method, specify what action should take place one the countdown finishes
+                endGame()
             }
 
             override fun onTick(millisUntilFinished: Long) {
@@ -109,6 +112,10 @@ class GameActivity : AppCompatActivity() {
     }
 
     private fun endGame(){
+        //display a toast message to notify the user the game has ended
+        Toast.makeText(this, getString(R.string.game_over_message, score.toString()), Toast.LENGTH_LONG).show()
 
+        //reset the state of the game once the countdown has finished
+        resetGame()
     }
 }

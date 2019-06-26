@@ -16,7 +16,7 @@
 * [x] Third step:
 	* 1. [x] Add string resources for every view so you dont use hardcoded values
 	* 2. [x] Replace the contents of the *incrementScore()* method because of the string resources now
-* [ ] Fourth step:
+* [x] Fourth step:
 	* 1. [x] Add a flag which tells if the game has been started or not
 	* 2. [x] Add a CountDown object
 	* 3. [x] Add a countdown interval variable (the rate at which the countdown will decrement)
@@ -24,4 +24,4 @@
 	* 5. [x] Implement the logic for the *resetGame()* method
 	* 6. [x] Implement the *startGame()* method
 	* 7. [x] Update the *incrementScore()* method to start the game when the button is tapped
-	* 8. [ ] Implement the *endGame()* method because the game doesn't know what to do once the timer reaches 0
+	* 8. [x] Implement the *endGame()* method because the game doesn't know what to do once the timer reaches 0
