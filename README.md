@@ -1,4 +1,5 @@
-* Appname: teamFighter from the book called **Android Apprentice** by *Bayliss D.*
+* Appname: tappingFighter from the book called **Android Apprentice** by *Bayliss D.*
+* This is a simple app features a button and two text views. When the button is tapped, one of the text views keeps track and updates the times that the button was tapped. The other text view keeps track of the time you have left. It is a 1 minute countdown timer. Down below are the steps taken when building the app
 * [x] First step:
 	* 1. [x] Use a Constraint Layout
 	* 2. [x] Add two text boxes. The first needs to sit in the top left corner. The second one needs to sit in the top right corner
